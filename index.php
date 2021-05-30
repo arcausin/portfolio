@@ -1,0 +1,74 @@
+<?php
+include ("db_portfolio.php");
+$repertoire_include = "";
+?>
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Alexis D'Ambrosio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="<?php echo $repertoire_include ?>assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<?php include('include/header.php'); ?>
+
+		<div id="main" style="padding-top: 50px;">
+			<section id="one">
+				<ul class="actions">
+					<li><a href="cv/" class="button">CV</a></li>
+					<li><a href="portfolio/" class="button">Portfolio</a></li>
+					<li><a href="#contactez-moi" class="button">Contactez-moi</a></li>
+				</ul>
+				<header class="major">
+					<h2>A propos de moi</h2>
+				</header>
+				<p>Né en 2001, je suis un grand passionné de jeu vidéo et d'astronomie depuis mon plus jeune âge. <br/>
+					Je suis curieux et avide de connaissances. <br/>
+					Je souhaite m'orienter vers le développement web ou l'animation / modelisation 3D.</p>
+			</section>
+
+			</section>
+
+			<section id="two">
+				<h2>Travaux récents</h2>
+				<div class="row">
+				<?php
+				$requete_projet = $conn_portfolio->prepare("SELECT projet.id, projet.titre, projet.description, projet.image, projet.lien, projet.nom_lien FROM projet ORDER BY id DESC LIMIT 6");
+				$requete_projet->execute();
+				while ($projet = $requete_projet->fetch()) {
+				?>
+					<article class="col-6 col-12-xsmall work-item">
+						<a href="images/fulls/<?php echo $projet['image']; ?>" class="image fit thumb"><img src="images/thumbs/<?php echo $projet['image']; ?>" alt="" /></a>
+						<h3><?php echo $projet['titre']; ?></h3>
+						<p><?php echo $projet['description']; ?></p>
+						<a href="<?php echo $projet['lien']; ?>"><?php echo $projet['nom_lien']; ?></a></p>
+						<ul class="actions" style="margin-top: 25px;">
+							<li><a href="portfolio/projet?id=<?php echo $projet['id']; ?>" class="button">En savoir plus</a></li>
+						</ul>
+					</article>
+				<?php
+				}
+				$requete_projet->closeCursor();
+				?>
+				</div>
+				<ul class="actions">
+					<li><a href="#" class="button">Retourner en haut</a></li>
+				</ul>
+			</section>
+
+			<?php include('include/contactez-moi.php'); ?>
+
+		</div>
+
+		<?php include('include/footer.php'); ?>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.poptrox.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>
