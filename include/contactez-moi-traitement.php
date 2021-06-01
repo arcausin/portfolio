@@ -33,7 +33,7 @@ if (isset($_POST['submit'])) { // si le bouton Envoyer est appuyé
 				E-mail : " . $email . "<br/>
 				<code>Message : " . $message . "</code><br/>
 				Cordialement <br/>
-				Jarvis</p>";
+				Emma</p>";
 
 				$messageTo = "<p>Bonjour, <br/>
 				Nous vous confirmons avoir reçu votre message de la part de : " . $name . "<br/>
