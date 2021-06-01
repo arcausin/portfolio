@@ -17,28 +17,29 @@ if (isset($_POST['submit'])) { // si le bouton Envoyer est appuyé
 			} else {
 				// tout les champs sont correctement rempli
 				// on récupère et sécurise les informations envoyé par le formulaire de contact
-				$name = validationDonnees($_POST['name']);
-				$email = validationDonnees($_POST['email']);
-				$message = validationDonnees($_POST['message']);
+				$name = htmlspecialchars($_POST['name']);
+				$email = htmlspecialchars($_POST['email']);
+				$message = htmlspecialchars($_POST['message']);
 				// on prépare le mail
 				$headers = "MIME-Version: 1.0" . "\r\n";
 				$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
 				$subjectFrom = "Nouveau message de " . $name;
+				
 				$subjectTo = "Confirmation de reception - Alexis D'Ambrosio";
 
 				$messageFrom = "<p>Bonjour, <br/>
 				Vous avez recu un nouveau message de la part de : " . $name . "<br/>
 				E-mail : " . $email . "<br/>
 				<code>Message : " . $message . "</code><br/>
-				<div style=\"text-align: right;\">Cordialement <br/>
-				Emma</div></p>";
+				Cordialement <br/></p>";
+				
 				$messageTo = "<p>Bonjour, <br/>
 				Nous vous confirmons avoir reçu votre message de la part de : " . $name . "<br/>
 				E-mail : " . $email . "<br/>
 				<code>Message : " . $message . "</code><br/>
-				<div style=\"text-align: right;\">Cordialement <br/>
-				Alexis D'Ambrosio</div></p>";
+				Cordialement <br/>
+				Alexis D'Ambrosio</p>";
 
 				$corpsEmailFrom = "
 				<html>
@@ -50,6 +51,7 @@ if (isset($_POST['submit'])) { // si le bouton Envoyer est appuyé
 					</body>
 				</html>
 				";
+				
 				$corpsEmailTo = "
 				<html>
 					<head>
@@ -61,8 +63,10 @@ if (isset($_POST['submit'])) { // si le bouton Envoyer est appuyé
 				</html>
 				";
 				// envoie du mail
-				if (mail("adao.dambrosio@gmail.com, arcausin@gmail.com", $subjectFrom, $corpsEmailFrom, $headers) && mail($email, $subjectTo, $corpsEmailTo, $headers)) {
-					header('Location: ../?envoyer#contactez-moi');
+				if (mail("adao.dambrosio@gmail.com, arcausin@gmail.com", $subjectFrom, $corpsEmailFrom, $headers)) {
+				  if (mail($email, $subjectTo, $corpsEmailTo, $headers)) {
+				    header('Location: ../?envoyer#contactez-moi');
+				  }
 				} else {
 					header('Location: ../?renvoyer#contactez-moi');
 				}
