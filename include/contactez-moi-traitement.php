@@ -74,4 +74,3 @@ if (isset($_POST['submit'])) { // si le bouton Envoyer est appuyé
 		}
 	}
 }
-?>
