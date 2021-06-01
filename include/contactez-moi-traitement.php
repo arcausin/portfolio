@@ -25,21 +25,23 @@ if (isset($_POST['submit'])) { // si le bouton Envoyer est appuyé
 				$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
 				$subjectFrom = "Nouveau message de " . $name;
-				
+
 				$subjectTo = "Confirmation de reception - Alexis D'Ambrosio";
 
 				$messageFrom = "<p>Bonjour, <br/>
 				Vous avez recu un nouveau message de la part de : " . $name . "<br/>
 				E-mail : " . $email . "<br/>
 				<code>Message : " . $message . "</code><br/>
-				Cordialement <br/></p>";
-				
+				Cordialement <br/>
+				Jarvis</p>";
+
 				$messageTo = "<p>Bonjour, <br/>
 				Nous vous confirmons avoir reçu votre message de la part de : " . $name . "<br/>
 				E-mail : " . $email . "<br/>
 				<code>Message : " . $message . "</code><br/>
 				Cordialement <br/>
-				Alexis D'Ambrosio</p>";
+				Alexis D'Ambrosio <br/><br/>
+				<i>Si vous n'êtes pas à l'origine de cette activité, veuillez <a href=\"http://alexis-dambrosio.fr/#contactez-moi\">me contacter</a>.</i></p>";
 
 				$corpsEmailFrom = "
 				<html>
@@ -51,7 +53,7 @@ if (isset($_POST['submit'])) { // si le bouton Envoyer est appuyé
 					</body>
 				</html>
 				";
-				
+
 				$corpsEmailTo = "
 				<html>
 					<head>
@@ -66,6 +68,8 @@ if (isset($_POST['submit'])) { // si le bouton Envoyer est appuyé
 				if (mail("adao.dambrosio@gmail.com, arcausin@gmail.com", $subjectFrom, $corpsEmailFrom, $headers)) {
 				  if (mail($email, $subjectTo, $corpsEmailTo, $headers)) {
 				    header('Location: ../?envoyer#contactez-moi');
+				  } else {
+				  	header('Location: ../?renvoyer#contactez-moi');
 				  }
 				} else {
 					header('Location: ../?renvoyer#contactez-moi');
