@@ -30,7 +30,7 @@ $repertoire_include = "../";
 
 			<section id="two">
 				<header class="major">
-					<h2>Experiences Professionnelles</h2>
+					<h3>Experiences Professionnelles</h3>
 				</header>
 
 				<?php
@@ -39,8 +39,9 @@ $repertoire_include = "../";
 				while ($experience_professionnelle = $requete_experience_professionnelle->fetch()) {
 				?>
 					<hr style="width: 40%;">
-					<h3><?php echo $experience_professionnelle['domaine']; ?><span style="float: right;"><?php echo $experience_professionnelle['date']; ?></span></h3>
-					<h4><?php echo $experience_professionnelle['nom']; ?></h4>
+					<h4><?php echo $experience_professionnelle['date']; ?></h4>
+					<h4><?php echo $experience_professionnelle['domaine']; ?></h4>
+					<h5><?php echo $experience_professionnelle['nom']; ?></h5>
 					<p><?php echo $experience_professionnelle['description']; ?> <br/>
 				<?php
 				}
@@ -50,7 +51,7 @@ $repertoire_include = "../";
 
 			<section id="three">
 				<header class="major">
-					<h2>Formations</h2>
+					<h3>Formations</h3>
 				</header>
 
 				<?php
@@ -59,7 +60,8 @@ $repertoire_include = "../";
 				while ($formation = $requete_formation->fetch()) {
 				?>
 					<hr style="width: 40%;">
-					<h3><?php echo $formation['etablissement']; ?><span style="float: right;"><?php echo $formation['date']; ?></span></h3>
+					<h4><?php echo $formation['date']; ?></h4>
+					<h4><?php echo $formation['etablissement']; ?></h4>
 					<p><?php echo $formation['nom']; ?></p>
 					<code><?php echo $formation['description']; ?></code>
 				<?php
@@ -70,17 +72,17 @@ $repertoire_include = "../";
 
 			<section id="four">
 				<header class="major">
-					<h2>Compétences</h2>
+					<h3>Compétences</h3>
 				</header>
 				<hr style="width: 40%;">
-				<h3>Langages de programmation et Outils</h3>
+				<h4>Langages de programmation et Outils</h4>
 
 				<p>HTML, CSS, Bootstrap, Javascript, Jquery, PHP, SQL.</p>
 				<p>Adobe Photoshop, Illustrator, Premiere Pro, After Effect.</p>
 				<p>Blender, Davinci Resolve, Unreal Engine, Krita, Inkscape.</p>
 
 				<hr style="width: 40%;">
-				<h3>Savoir-Faire</h3>
+				<h4>Savoir-Faire</h4>
 
 				<p>- Intégration d'une maquette graphique d'un site web <br/>
 				- Exploiter les outils numérique dans le contexte professionnel <br/>

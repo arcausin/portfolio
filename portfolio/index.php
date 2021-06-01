@@ -28,7 +28,7 @@ $repertoire_include = "../";
 				$requete_projet->execute();
 				while ($projet = $requete_projet->fetch()) {
 				?>
-					<article class="col-6 col-12-xsmall work-item">
+					<article class="col-md-6 col-xs-12 work-item">
 						<img class="image fit thumb" src="../images/thumbs/<?php echo $projet['image']; ?>" alt="" />
 						<h3><?php echo $projet['titre']; ?></h3>
 						<p><?php echo $projet['description']; ?></p>
