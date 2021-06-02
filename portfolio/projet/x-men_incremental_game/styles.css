@@ -1,0 +1,34 @@
+.container {
+	background-color: grey;
+}
+
+#title {
+	background-color: grey;
+}
+
+.row {
+	border: 1px solid silver;
+}
+
+img {
+	border: 1px solid silver;
+	width: 250px;
+}
+
+#scroll {
+	overflow-x:scroll;
+	height: 877px;
+}
+
+#background {
+	background-image: url(images/native/background.png);
+}
+
+#clicker {
+	background-color: grey;
+	margin-top: 250px;
+}
+
+#stats {
+	background-color: white;
+}

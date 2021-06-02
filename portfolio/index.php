@@ -32,7 +32,8 @@ $repertoire_include = "../";
 						<img class="image fit thumb" src="../images/thumbs/<?php echo $projet['image']; ?>" alt="" />
 						<h3><?php echo $projet['titre']; ?></h3>
 						<p><?php echo $projet['description']; ?></p>
-						<a href="<?php echo $projet['lien']; ?>"><?php echo $projet['nom_lien']; ?></a></p>
+						<!-- Si le lien commence par http rien  ajouter au début du href sinon commencer le href par projet/ -->
+						<a target="_blank" href="<?php if (substr($projet['lien'], 0, 4) === "http") {echo "";} else {echo "projet/";} echo $projet['lien']; ?>"><?php echo $projet['nom_lien']; ?></a></p>
 						<ul class="actions" style="margin-top: 25px;">
 							<li><a href="projet?id=<?php echo $projet['id']; ?>" class="button">En savoir plus</a></li>
 						</ul>

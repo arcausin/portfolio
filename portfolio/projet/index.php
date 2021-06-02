@@ -48,7 +48,7 @@ $requete_fiche_projet->closeCursor();
             <h3><?php echo $fiche_projet['date']; ?></h3>
             <p><?php echo $fiche_projet['description']; ?></p>
             <p>Technologie : <?php echo $fiche_projet['technologie']; ?></p>
-						<a href="<?php echo $fiche_projet['lien']; ?>"><?php echo $fiche_projet['nom_lien']; ?></a></p>
+						<a target="_blank" href="<?php echo $fiche_projet['lien']; ?>"><?php echo $fiche_projet['nom_lien']; ?></a></p>
 						<?php if ($fiche_projet['video'] != NULL) {
 							?>
 							<img class="image fit thumb" src="../../images/fulls/<?php echo $fiche_projet['image']; ?>" alt="" />
