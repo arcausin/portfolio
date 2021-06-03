@@ -28,7 +28,7 @@ $requete_fiche_projet->closeCursor();
 				<h1>Fiche Projet</h1>
 				<h2><?php echo $fiche_projet['titre']; ?></h2>
 				<div class="row">
-					<article class="col-6 col-12-xsmall work-item">
+					<article class="col-md-6 col-xs-12 work-item">
 						<?php if ($fiche_projet['video'] != NULL) {
 						?>
 							<video controls width="100%" height="auto">
