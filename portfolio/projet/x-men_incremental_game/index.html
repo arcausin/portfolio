@@ -1,208 +1,314 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	<title>X-Men Incremental Game</title>
-</head>
-<body>
+<!doctype html>
+<html lang="fr">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<div class="container-fluid">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>Mandatory</title>
+  </head>
+  <body>
+    <div class="container-fluid text-center height-auto-top">
+      <h3>X-Men Incremental Game</h3>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12 col-xl-8 p-1 height-auto-left" style="background-image: url(images/native/background.png);">
+          <div class="text-center sticky-top p-1">
+            <div>
+              <h4 class="rounded text-white bg-dark" style="color: #ffffff;">Efficacity : <span id="totalOfMutantPerSecond">(totalOfMutantPerSecond)</span></h4>
+              <h4 class="rounded text-white bg-dark" style="color: #ffffff;">Mutants : <span id="numberOfMutantCurrently">(numberOfMutantCurrently)</span></h4>
+              <h4 class="rounded text-white bg-dark">Mutants Total : <span id="totalOfMutant">(totalOfMutant)</span></h4>
+            </div>
+            <img src="images/native/clicker.png" class="bg-light rounded img-fluid m-3 w-25" alt="" id="clicker">
+          </div>
+        </div>
 
-		<div class="row">
-			<div class="col-12 text-center">
-				<h1 id="title">X-Men Incremental Game</h1>
-			</div>
-		</div>
+        <div class="p-0 col-sm-12 col-xl-4 height-auto-right" id="scroll">
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-4 d-flex align-items-center">
+                  <img class="img-fluid" src="images/8-bit/angel.png" alt=""  id="angel">
+                </div>
+                <div class="col-8">
+                  <h5 id="angel.name" class="card-title">(angel.name)</h5>
+                  <div class="col-12">
+                    Prix : <span id="angel.price">(price)</span> | Quantity : <span id="angel.quantity">(quantity)</span>
+                  </div>
+                  <div class="col-12">
+                    Efficacité : <span id="angel.mutantPerSecondAdd">(mutantPerSecondAdd)</span> | Efficacité Total : <span id="angel.sumOfMutantPerSecondAdd">(sumOfMutantPerSecondAdd)</span>
+                  </div>
+                  <div class="col-12">
+                    Total : <span id="angel.totalMutantProduct">(totalMutantProduct)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-		<div class="row">
-			<div class="col-6 text-center" id="background">
-				<div class="row" id="stats">
-					<h1>total Of Mutant Per Second : <span id="totalOfMutantPerSecond">(totalOfMutantPerSecond)</span></h1>
-					<h1>number Of Mutant Currently : <span id="numberOfMutantCurrently">(numberOfMutantCurrently)</span></h1>
-					<h1>total Of Mutant : <span id="totalOfMutant">(totalOfMutant)</span></h1>
-				</div>
-				<img src="images/native/clicker.png" id="clicker">
-			</div>
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-4 d-flex align-items-center">
+                  <img class="img-fluid" src="images/8-bit/beast.png" alt=""  id="beast">
+                </div>
+                <div class="col-8">
+                  <h5 id="beast.name" class="card-title">(beast.name)</h5>
+                  <div class="col-12">
+                    Prix : <span id="beast.price">(price)</span> | Quantity : <span id="beast.quantity">(quantity)</span>
+                  </div>
+                  <div class="col-12">
+                    Efficacité : <span id="beast.mutantPerSecondAdd">(mutantPerSecondAdd)</span> | Efficacité Total : <span id="beast.sumOfMutantPerSecondAdd">(sumOfMutantPerSecondAdd)</span>
+                  </div>
+                  <div class="col-12">
+                    Total : <span id="beast.totalMutantProduct">(totalMutantProduct)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-			<div class="col-6" id="scroll">
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-4 d-flex align-items-center">
+                  <img class="img-fluid" src="images/8-bit/iceman.png" alt=""  id="iceman">
+                </div>
+                <div class="col-8">
+                  <h5 id="iceman.name" class="card-title">(iceman.name)</h5>
+                  <div class="col-12">
+                    Prix : <span id="iceman.price">(price)</span> | Quantity : <span id="iceman.quantity">(quantity)</span>
+                  </div>
+                  <div class="col-12">
+                    Efficacité : <span id="iceman.mutantPerSecondAdd">(mutantPerSecondAdd)</span> | Efficacité Total : <span id="iceman.sumOfMutantPerSecondAdd">(sumOfMutantPerSecondAdd)</span>
+                  </div>
+                  <div class="col-12">
+                    Total : <span id="iceman.totalMutantProduct">(totalMutantProduct)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-				<div class="row">
-					<div class="col-4">
-						<img src="images/8-bit/angel.png" class="img-fluid" id="angel">
-					</div>
-					<div class="col-8">
-						<h3 id="angel.name">(angel.name)</h3>
-						<p>prix : <span id="angel.price">(price)</span></p>
-						<p>Quantity : <span id="angel.quantity">(quantity)</span></p>
-						<p>Efficacity Per Second for one quantity : <span id="angel.mutantPerSecondAdd">(mutantPerSecondAdd)</span></p>
-						<p>Efficacity total Per Second for all quantity : <span id="angel.sumOfMutantPerSecondAdd">(sumOfMutantPerSecondAdd)</span></p>
-						<p>the number of mutants produced in total : <span id="angel.totalMutantProduct">(totalMutantProduct)</span></p>
-					</div>
-				</div>
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-4 d-flex align-items-center">
+                  <img class="img-fluid" src="images/8-bit/pixie.png" alt=""  id="pixie">
+                </div>
+                <div class="col-8">
+                  <h5 id="pixie.name" class="card-title">(pixie.name)</h5>
+                  <div class="col-12">
+                    Prix : <span id="pixie.price">(price)</span> | Quantity : <span id="pixie.quantity">(quantity)</span>
+                  </div>
+                  <div class="col-12">
+                    Efficacité : <span id="pixie.mutantPerSecondAdd">(mutantPerSecondAdd)</span> | Efficacité Total : <span id="pixie.sumOfMutantPerSecondAdd">(sumOfMutantPerSecondAdd)</span>
+                  </div>
+                  <div class="col-12">
+                    Total : <span id="pixie.totalMutantProduct">(totalMutantProduct)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-				<div class="row">
-					<div class="col-4">
-						<img src="images/8-bit/beast.png" class="img-fluid" id="beast">
-					</div>
-					<div class="col-8">
-						<h3 id="beast.name">(beast.name)</h3>
-						<p>prix : <span id="beast.price">(price)</span></p>
-						<p>Quantity : <span id="beast.quantity">(quantity)</span></p>
-						<p>Efficacity Per Second for one quantity : <span id="beast.mutantPerSecondAdd">(mutantPerSecondAdd)</span></p>
-						<p>Efficacity total Per Second for all quantity : <span id="beast.sumOfMutantPerSecondAdd">(sumOfMutantPerSecondAdd)</span></p>
-						<p>the number of mutants produced in total : <span id="beast.totalMutantProduct">(totalMutantProduct)</span></p>
-					</div>
-				</div>
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-4 d-flex align-items-center">
+                  <img class="img-fluid" src="images/8-bit/jubilee.png" alt=""  id="jubilee">
+                </div>
+                <div class="col-8">
+                  <h5 id="jubilee.name" class="card-title">(jubilee.name)</h5>
+                  <div class="col-12">
+                    Prix : <span id="jubilee.price">(price)</span> | Quantity : <span id="jubilee.quantity">(quantity)</span>
+                  </div>
+                  <div class="col-12">
+                    Efficacité : <span id="jubilee.mutantPerSecondAdd">(mutantPerSecondAdd)</span> | Efficacité Total : <span id="jubilee.sumOfMutantPerSecondAdd">(sumOfMutantPerSecondAdd)</span>
+                  </div>
+                  <div class="col-12">
+                    Total : <span id="jubilee.totalMutantProduct">(totalMutantProduct)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-				<div class="row">
-					<div class="col-4">
-						<img src="images/8-bit/iceman.png" class="img-fluid" id="iceman">
-					</div>
-					<div class="col-8">
-						<h3 id="iceman.name">(iceman.name)</h3>
-						<p>prix : <span id="iceman.price">(price)</span></p>
-						<p>Quantity : <span id="iceman.quantity">(quantity)</span></p>
-						<p>Efficacity Per Second for one quantity : <span id="iceman.mutantPerSecondAdd">(mutantPerSecondAdd)</span></p>
-						<p>Efficacity total Per Second for all quantity : <span id="iceman.sumOfMutantPerSecondAdd">(sumOfMutantPerSecondAdd)</span></p>
-						<p>the number of mutants produced in total : <span id="iceman.totalMutantProduct">(totalMutantProduct)</span></p>
-					</div>
-				</div>
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-4 d-flex align-items-center">
+                  <img class="img-fluid" src="images/8-bit/majik.png" alt=""  id="majik">
+                </div>
+                <div class="col-8">
+                  <h5 id="majik.name" class="card-title">(majik.name)</h5>
+                  <div class="col-12">
+                    Prix : <span id="majik.price">(price)</span> | Quantity : <span id="majik.quantity">(quantity)</span>
+                  </div>
+                  <div class="col-12">
+                    Efficacité : <span id="majik.mutantPerSecondAdd">(mutantPerSecondAdd)</span> | Efficacité Total : <span id="majik.sumOfMutantPerSecondAdd">(sumOfMutantPerSecondAdd)</span>
+                  </div>
+                  <div class="col-12">
+                    Total : <span id="majik.totalMutantProduct">(totalMutantProduct)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-				<div class="row">
-					<div class="col-4">
-						<img src="images/8-bit/pixie.png" class="img-fluid" id="pixie">
-					</div>
-					<div class="col-8">
-						<h3 id="pixie.name">(pixie.name)</h3>
-						<p>prix : <span id="pixie.price">(price)</span></p>
-						<p>Quantity : <span id="pixie.quantity">(quantity)</span></p>
-						<p>Efficacity Per Second for one quantity : <span id="pixie.mutantPerSecondAdd">(mutantPerSecondAdd)</span></p>
-						<p>Efficacity total Per Second for all quantity : <span id="pixie.sumOfMutantPerSecondAdd">(sumOfMutantPerSecondAdd)</span></p>
-						<p>the number of mutants produced in total : <span id="pixie.totalMutantProduct">(totalMutantProduct)</span></p>
-					</div>
-				</div>
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-4 d-flex align-items-center">
+                  <img class="img-fluid" src="images/8-bit/gambit.png" alt=""  id="gambit">
+                </div>
+                <div class="col-8">
+                  <h5 id="gambit.name" class="card-title">(gambit.name)</h5>
+                  <div class="col-12">
+                    Prix : <span id="gambit.price">(price)</span> | Quantity : <span id="gambit.quantity">(quantity)</span>
+                  </div>
+                  <div class="col-12">
+                    Efficacité : <span id="gambit.mutantPerSecondAdd">(mutantPerSecondAdd)</span> | Efficacité Total : <span id="gambit.sumOfMutantPerSecondAdd">(sumOfMutantPerSecondAdd)</span>
+                  </div>
+                  <div class="col-12">
+                    Total : <span id="gambit.totalMutantProduct">(totalMutantProduct)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-				<div class="row">
-					<div class="col-4">
-						<img src="images/8-bit/jubilee.png" class="img-fluid" id="jubilee">
-					</div>
-					<div class="col-8">
-						<h3 id="jubilee.name">(jubilee.name)</h3>
-						<p>prix : <span id="jubilee.price">(price)</span></p>
-						<p>Quantity : <span id="jubilee.quantity">(quantity)</span></p>
-						<p>Efficacity Per Second for one quantity : <span id="jubilee.mutantPerSecondAdd">(mutantPerSecondAdd)</span></p>
-						<p>Efficacity total Per Second for all quantity : <span id="jubilee.sumOfMutantPerSecondAdd">(sumOfMutantPerSecondAdd)</span></p>
-						<p>the number of mutants produced in total : <span id="jubilee.totalMutantProduct">(totalMutantProduct)</span></p>
-					</div>
-				</div>
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-4 d-flex align-items-center">
+                  <img class="img-fluid" src="images/8-bit/emma_frost.png" alt=""  id="emmaFrost">
+                </div>
+                <div class="col-8">
+                  <h5 id="emmaFrost.name" class="card-title">(emmaFrost.name)</h5>
+                  <div class="col-12">
+                    Prix : <span id="emmaFrost.price">(price)</span> | Quantity : <span id="emmaFrost.quantity">(quantity)</span>
+                  </div>
+                  <div class="col-12">
+                    Efficacité : <span id="emmaFrost.mutantPerSecondAdd">(mutantPerSecondAdd)</span> | Efficacité Total : <span id="emmaFrost.sumOfMutantPerSecondAdd">(sumOfMutantPerSecondAdd)</span>
+                  </div>
+                  <div class="col-12">
+                    Total : <span id="emmaFrost.totalMutantProduct">(totalMutantProduct)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-				<div class="row">
-					<div class="col-4">
-						<img src="images/8-bit/majik.png" class="img-fluid" id="majik">
-					</div>
-					<div class="col-8">
-						<h3 id="majik.name">(majik.name)</h3>
-						<p>prix : <span id="majik.price">(price)</span></p>
-						<p>Quantity : <span id="majik.quantity">(quantity)</span></p>
-						<p>Efficacity Per Second for one quantity : <span id="majik.mutantPerSecondAdd">(mutantPerSecondAdd)</span></p>
-						<p>Efficacity total Per Second for all quantity : <span id="majik.sumOfMutantPerSecondAdd">(sumOfMutantPerSecondAdd)</span></p>
-						<p>the number of mutants produced in total : <span id="majik.totalMutantProduct">(totalMutantProduct)</span></p>
-					</div>
-				</div>
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-4 d-flex align-items-center">
+                  <img class="img-fluid" src="images/8-bit/namor.png" alt=""  id="namor">
+                </div>
+                <div class="col-8">
+                  <h5 id="namor.name" class="card-title">(namor.name)</h5>
+                  <div class="col-12">
+                    Prix : <span id="namor.price">(price)</span> | Quantity : <span id="namor.quantity">(quantity)</span>
+                  </div>
+                  <div class="col-12">
+                    Efficacité : <span id="namor.mutantPerSecondAdd">(mutantPerSecondAdd)</span> | Efficacité Total : <span id="namor.sumOfMutantPerSecondAdd">(sumOfMutantPerSecondAdd)</span>
+                  </div>
+                  <div class="col-12">
+                    Total : <span id="namor.totalMutantProduct">(totalMutantProduct)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-				<div class="row">
-					<div class="col-4">
-						<img src="images/8-bit/gambit.png" class="img-fluid" id="gambit">
-					</div>
-					<div class="col-8">
-						<h3 id="gambit.name">(gambit.name)</h3>
-						<p>prix : <span id="gambit.price">(price)</span></p>
-						<p>Quantity : <span id="gambit.quantity">(quantity)</span></p>
-						<p>Efficacity Per Second for one quantity : <span id="gambit.mutantPerSecondAdd">(mutantPerSecondAdd)</span></p>
-						<p>Efficacity total Per Second for all quantity : <span id="gambit.sumOfMutantPerSecondAdd">(sumOfMutantPerSecondAdd)</span></p>
-						<p>the number of mutants produced in total : <span id="gambit.totalMutantProduct">(totalMutantProduct)</span></p>
-					</div>
-				</div>
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-4 d-flex align-items-center">
+                  <img class="img-fluid" src="images/8-bit/storm.png" alt=""  id="storm">
+                </div>
+                <div class="col-8">
+                  <h5 id="storm.name" class="card-title">(storm.name)</h5>
+                  <div class="col-12">
+                    Prix : <span id="storm.price">(price)</span> | Quantity : <span id="storm.quantity">(quantity)</span>
+                  </div>
+                  <div class="col-12">
+                    Efficacité : <span id="storm.mutantPerSecondAdd">(mutantPerSecondAdd)</span> | Efficacité Total : <span id="storm.sumOfMutantPerSecondAdd">(sumOfMutantPerSecondAdd)</span>
+                  </div>
+                  <div class="col-12">
+                    Total : <span id="storm.totalMutantProduct">(totalMutantProduct)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-				<div class="row">
-					<div class="col-4">
-						<img src="images/8-bit/emma_frost.png" class="img-fluid" id="emmaFrost">
-					</div>
-					<div class="col-8">
-						<h3 id="emmaFrost.name">(emmaFrost.name)</h3>
-						<p>prix : <span id="emmaFrost.price">(price)</span></p>
-						<p>Quantity : <span id="emmaFrost.quantity">(quantity)</span></p>
-						<p>Efficacity Per Second for one quantity : <span id="emmaFrost.mutantPerSecondAdd">(mutantPerSecondAdd)</span></p>
-						<p>Efficacity total Per Second for all quantity : <span id="emmaFrost.sumOfMutantPerSecondAdd">(sumOfMutantPerSecondAdd)</span></p>
-						<p>the number of mutants produced in total : <span id="emmaFrost.totalMutantProduct">(totalMutantProduct)</span></p>
-					</div>
-				</div>
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-4 d-flex align-items-center">
+                  <img class="img-fluid" src="images/8-bit/deadpool.png" alt=""  id="deadpool">
+                </div>
+                <div class="col-8">
+                  <h5 id="deadpool.name" class="card-title">(deadpool.name)</h5>
+                  <div class="col-12">
+                    Prix : <span id="deadpool.price">(price)</span> | Quantity : <span id="deadpool.quantity">(quantity)</span>
+                  </div>
+                  <div class="col-12">
+                    Efficacité : <span id="deadpool.mutantPerSecondAdd">(mutantPerSecondAdd)</span> | Efficacité Total : <span id="deadpool.sumOfMutantPerSecondAdd">(sumOfMutantPerSecondAdd)</span>
+                  </div>
+                  <div class="col-12">
+                    Total : <span id="deadpool.totalMutantProduct">(totalMutantProduct)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-				<div class="row">
-					<div class="col-4">
-						<img src="images/8-bit/namor.png" class="img-fluid" id="namor">
-					</div>
-					<div class="col-8">
-						<h3 id="namor.name">(namor.name)</h3>
-						<p>prix : <span id="namor.price">(price)</span></p>
-						<p>Quantity : <span id="namor.quantity">(quantity)</span></p>
-						<p>Efficacity Per Second for one quantity : <span id="namor.mutantPerSecondAdd">(mutantPerSecondAdd)</span></p>
-						<p>Efficacity total Per Second for all quantity : <span id="namor.sumOfMutantPerSecondAdd">(sumOfMutantPerSecondAdd)</span></p>
-						<p>the number of mutants produced in total : <span id="namor.totalMutantProduct">(totalMutantProduct)</span></p>
-					</div>
-				</div>
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-4 d-flex align-items-center">
+                  <img class="img-fluid" src="images/8-bit/magneto.png" alt=""  id="magneto">
+                </div>
+                <div class="col-8">
+                  <h5 id="magneto.name" class="card-title">(magneto.name)</h5>
+                  <div class="col-12">
+                    Prix : <span id="magneto.price">(price)</span> | Quantity : <span id="magneto.quantity">(quantity)</span>
+                  </div>
+                  <div class="col-12">
+                    Efficacité : <span id="magneto.mutantPerSecondAdd">(mutantPerSecondAdd)</span> | Efficacité Total : <span id="magneto.sumOfMutantPerSecondAdd">(sumOfMutantPerSecondAdd)</span>
+                  </div>
+                  <div class="col-12">
+                    Total : <span id="magneto.totalMutantProduct">(totalMutantProduct)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-				<div class="row">
-					<div class="col-4">
-						<img src="images/8-bit/storm.png" class="img-fluid" id="storm">
-					</div>
-					<div class="col-8">
-						<h3 id="storm.name">(storm.name)</h3>
-						<p>prix : <span id="storm.price">(price)</span></p>
-						<p>Quantity : <span id="storm.quantity">(quantity)</span></p>
-						<p>Efficacity Per Second for one quantity : <span id="storm.mutantPerSecondAdd">(mutantPerSecondAdd)</span></p>
-						<p>Efficacity total Per Second for all quantity : <span id="storm.sumOfMutantPerSecondAdd">(sumOfMutantPerSecondAdd)</span></p>
-						<p>the number of mutants produced in total : <span id="storm.totalMutantProduct">(totalMutantProduct)</span></p>
-					</div>
-				</div>
+        </div>
+      </div>
+    </div>
 
-				<div class="row">
-					<div class="col-4">
-						<img src="images/8-bit/deadpool.png" class="img-fluid" id="deadpool">
-					</div>
-					<div class="col-8">
-						<h3 id="deadpool.name">(deadpool.name)</h3>
-						<p>prix : <span id="deadpool.price">(price)</span></p>
-						<p>Quantity : <span id="deadpool.quantity">(quantity)</span></p>
-						<p>Efficacity Per Second for one quantity : <span id="deadpool.mutantPerSecondAdd">(mutantPerSecondAdd)</span></p>
-						<p>Efficacity total Per Second for all quantity : <span id="deadpool.sumOfMutantPerSecondAdd">(sumOfMutantPerSecondAdd)</span></p>
-						<p>the number of mutants produced in total : <span id="deadpool.totalMutantProduct">(totalMutantProduct)</span></p>
-					</div>
-				</div>
 
-				<div class="row">
-					<div class="col-4">
-						<img src="images/8-bit/magneto.png" class="img-fluid" id="magneto">
-					</div>
-					<div class="col-8">
-						<h3 id="magneto.name">(magneto.name)</h3>
-						<p>prix : <span id="magneto.price">(price)</span></p>
-						<p>Quantity : <span id="magneto.quantity">(quantity)</span></p>
-						<p>Efficacity Per Second for one quantity : <span id="magneto.mutantPerSecondAdd">(mutantPerSecondAdd)</span></p>
-						<p>Efficacity total Per Second for all quantity : <span id="magneto.sumOfMutantPerSecondAdd">(sumOfMutantPerSecondAdd)</span></p>
-						<p>the number of mutants produced in total : <span id="magneto.totalMutantProduct">(totalMutantProduct)</span></p>
-					</div>
-				</div>
-			</div>
+    <!-- Optional JavaScript; choose one of the two! -->
 
-		</div>
-	</div>
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 
-	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-	<script src="script.js"></script>
-</body>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    -->
+  </body>
 </html>

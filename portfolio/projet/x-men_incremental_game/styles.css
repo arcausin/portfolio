@@ -1,34 +1,80 @@
-.container {
-	background-color: grey;
+
+
+@media (max-device-width: 767px) {
+ .height-auto-top {
+	 height : 5vh;
+ }
+ .height-auto-left {
+	 height : 34vh;
+ }
+ .height-auto-right {
+	 height : 59vh;
+ }
+ #scroll {
+	 overflow-x:scroll;
+	 height: 59vh;
+ }
+ #img-clicker {
+	 max-width: 150px;
+ }
+ html {
+ 	font-size: 66%;
+ }
 }
 
-#title {
-	background-color: grey;
+@media screen and (min-device-width: 768px) and (max-device-width: 991px) {
+	.height-auto-top {
+		height : 5vh;
+	}
+	.height-auto-left {
+		height : 34vh;
+	}
+	.height-auto-right {
+		height : 59vh;
+	}
+	#scroll {
+		overflow-x:scroll;
+		height: 59vh;
+	}
+	html {
+		font-size: 80%;
+	}
 }
 
-.row {
-	border: 1px solid silver;
+@media screen and (min-device-width: 992px) and (max-device-width: 1199px) {
+	.height-auto-top {
+		height : 5vh;
+	}
+	.height-auto-left {
+		height : 34vh;
+	}
+	.height-auto-right {
+		height : 59vh;
+	}
+	#scroll {
+		overflow-x:scroll;
+		height: 59vh;
+	}
+	html {
+		font-size: 100%;
+	}
 }
 
-img {
-	border: 1px solid silver;
-	width: 250px;
-}
-
-#scroll {
-	overflow-x:scroll;
-	height: 90vh;
-}
-
-#background {
-	background-image: url(images/native/background.png);
-}
-
-#clicker {
-	background-color: grey;
-	margin-top: 250px;
-}
-
-#stats {
-	background-color: white;
+@media (min-width: 1200px) {
+	.height-auto-top {
+		height : 5vh;
+	}
+	.height-auto-left {
+		height : 94vh;
+	}
+	.height-auto-right {
+		height : 94vh;
+	}
+	#scroll {
+		overflow-x:scroll;
+		height: 94vh;
+	}
+	html {
+		font-size: 100%;
+	}
 }
