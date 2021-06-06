@@ -29,7 +29,7 @@ $requete_fiche_projet->closeCursor();
 				<h2><?php echo $fiche_projet['titre']; ?></h2>
 				<div class="row">
 					<article class="col-md-6 col-xs-12 work-item">
-						<?php if ($fiche_projet['video'] != NULL) {
+						<?php if (isset($fiche_projet['video'])) {
 						?>
 							<video controls width="100%" height="auto">
 								<source src="../../videos/<?php echo $fiche_projet['video'] ?>" type="video/mp4">
@@ -48,17 +48,39 @@ $requete_fiche_projet->closeCursor();
             <h3><?php echo $fiche_projet['date']; ?></h3>
             <p><?php echo $fiche_projet['description']; ?></p>
             <p>Technologie : <?php echo $fiche_projet['technologie']; ?></p>
-						<a target="_blank" href="<?php echo $fiche_projet['lien']; ?>"><?php echo $fiche_projet['nom_lien']; ?></a></p>
-						<?php if ($fiche_projet['video'] != NULL) {
+						<?php if (isset($fiche_projet['lien'])) {
+							?>
+								<p><a target="_blank" href="<?php echo $fiche_projet['lien']; ?>"><?php echo $fiche_projet['nom_lien']; ?></a></p>
+							<?php
+						} ?>
+
+						<?php if (isset($fiche_projet['video'])) {
 							?>
 							<img class="image fit thumb" src="../../images/fulls/<?php echo $fiche_projet['image']; ?>" alt="" />
 							<?php
-						}
+						} ?>
+
+						<?php if (isset($fiche_projet['image2'])) {
 						?>
-            <img style="margin-top: 25px;" class="image fit thumb" src="../../images/fulls/<?php echo $fiche_projet['image2']; ?>" alt="">
-            <img style="margin-top: 25px;" class="image fit thumb" src="../../images/fulls/<?php echo $fiche_projet['image3']; ?>" alt="">
-            <img style="margin-top: 25px;" class="image fit thumb" src="../../images/fulls/<?php echo $fiche_projet['image4']; ?>" alt="">
-            <img style="margin-top: 25px;" class="image fit thumb" src="../../images/fulls/<?php echo $fiche_projet['image5']; ?>" alt="">
+							<img style="margin-top: 25px;" class="image fit thumb" src="../../images/fulls/<?php echo $fiche_projet['image2']; ?>" alt="2">
+						<?php
+						} ?>
+						<?php if (isset($fiche_projet['image3'])) {
+						?>
+							<img style="margin-top: 25px;" class="image fit thumb" src="../../images/fulls/<?php echo $fiche_projet['image3']; ?>" alt="3">
+						<?php
+						} ?>
+						<?php if (isset($fiche_projet['image4'])) {
+						?>
+							<img style="margin-top: 25px;" class="image fit thumb" src="../../images/fulls/<?php echo $fiche_projet['image4']; ?>" alt="4">
+						<?php
+						} ?>
+						<?php if (isset($fiche_projet['image5'])) {
+						?>
+							<img style="margin-top: 25px;" class="image fit thumb" src="../../images/fulls/<?php echo $fiche_projet['image5']; ?>" alt="5">
+						<?php
+						} ?>
+
 					</article>
 				</div>
 			</section>
