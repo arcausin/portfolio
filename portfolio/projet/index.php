@@ -1,6 +1,9 @@
 <?php
 include ("../../db_portfolio.php");
 $repertoire_include = "../../";
+if (empty($_GET['id'])) {
+	header('Location: ../');
+}
 
 $requete_fiche_projet = $conn_portfolio->prepare("SELECT projet.id, projet.titre, projet.description, projet.image, projet.image2, projet.image3, projet.image4, projet.image5, projet.lien, projet.nom_lien, projet.date, projet.technologie, projet.video FROM projet WHERE projet.id = '".$_GET['id']."'");
 $requete_fiche_projet->execute();
