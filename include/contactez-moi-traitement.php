@@ -1,4 +1,5 @@
 <?php
+include ("../db_portfolio.php");
 function validationDonnees($donnees) {
 	$donnees = trim($donnees); // Supprime les espaces (ou d'autres caractères) en début et fin de chaîne
 	$donnees = stripslashes($donnees); // Supprime les antislashs d'une chaîne
