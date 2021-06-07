@@ -68,6 +68,10 @@ if (isset($_POST['submit'])) { // si le bouton Envoyer est appuyé
 				// envoie du mail
 				if (mail("adao.dambrosio@gmail.com", $subjectFrom, $corpsEmailFrom, $headers)) {
 				  if (mail($email, $subjectTo, $corpsEmailTo, $headers)) {
+						$envoie_mail_bdd = $conn_portfolio->prepare("INSERT INTO historique_email (nom, email, message) VALUES (?, ?, ?)");
+						$envoie_mail_bdd->bind_param("sss", $name, $email, $message);
+						$envoie_mail_bdd->execute();
+						$envoie_mail_bdd->close();
 				    header('Location: ../?envoyer#contactez-moi');
 				  } else {
 				  	header('Location: ../?renvoyer#contactez-moi');
