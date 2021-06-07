@@ -18,9 +18,9 @@ if (isset($_POST['submit'])) { // si le bouton Envoyer est appuyé
 			} else {
 				// tout les champs sont correctement rempli
 				// on récupère et sécurise les informations envoyé par le formulaire de contact
-				$name = htmlspecialchars($_POST['name']);
-				$email = htmlspecialchars($_POST['email']);
-				$message = htmlspecialchars($_POST['message']);
+				$name = validationDonnees($_POST['name']);
+				$email = validationDonnees($_POST['email']);
+				$message = validationDonnees($_POST['message']);
 				// on prépare le mail
 				$headers = "MIME-Version: 1.0" . "\r\n";
 				$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
@@ -66,7 +66,7 @@ if (isset($_POST['submit'])) { // si le bouton Envoyer est appuyé
 				</html>
 				";
 				// envoie du mail
-				if (mail("adao.dambrosio@gmail.com, arcausin@gmail.com", $subjectFrom, $corpsEmailFrom, $headers)) {
+				if (mail("adao.dambrosio@gmail.com", $subjectFrom, $corpsEmailFrom, $headers)) {
 				  if (mail($email, $subjectTo, $corpsEmailTo, $headers)) {
 				    header('Location: ../?envoyer#contactez-moi');
 				  } else {
