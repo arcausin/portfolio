@@ -67,7 +67,7 @@ if (isset($_POST['submit'])) { // si le bouton Envoyer est appuyé
 				</html>
 				";
 				// envoie du mail
-				if (mail("arcausin@gmail.com", $subjectFrom, $corpsEmailTo, $headers)) {
+				if (mail("arcausin@gmail.com", $subjectTo, $corpsEmailFrom, $headers)) {
 				  if (mail($email, $subjectTo, $corpsEmailTo, $headers)) {
 						$envoie_mail_bdd = $conn_portfolio->prepare("INSERT INTO historique_email (nom, email, message) VALUES (:nom, :email, :message)");
 						$envoie_mail_bdd->execute(array(
