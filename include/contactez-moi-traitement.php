@@ -36,7 +36,7 @@ if (isset($_POST['submit'])) { // si le bouton Envoyer est appuyé
 				<code>Message : " . $message . "</code><br/>
 				Cordialement <br/>
 				Emma <br/><br/>
-				<i>Si vous n'êtes pas à l'origine de cette activité, veuillez <a href=\"http://alexis-dambrosio.fr/#contactez-moi\">me contacter</a>.</i></p>";
+				<i><a href=\"http://alexis-dambrosio.fr/#contactez-moi\"></a></i></p>";
 
 				$messageTo = "<p>Bonjour, <br/>
 				Nous vous confirmons avoir reçu votre message de la part de : " . $name . "<br/>
