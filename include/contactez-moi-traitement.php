@@ -51,7 +51,7 @@ if (isset($_POST['submit'])) { // si le bouton Envoyer est appuyé
 						<title>". $subjectTo ."</title>
 					</head>
 					<body>
-						". $messageTo ."
+						". $messageFrom ."
 					</body>
 				</html>
 				";
