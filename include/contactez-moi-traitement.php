@@ -31,7 +31,7 @@ if (isset($_POST['submit'])) { // si le bouton Envoyer est appuyé
 				$subjectTo = "Confirmation de reception - Alexis D'Ambrosio";
 
 				$messageFrom = "<p>Bonjour, <br/>
-				Nous vous confirmons avoir reçu votre message de la part de : " . $name . "<br/>
+				Vous avez recu un nouveau message de la part de : " . $name . "<br/>
 				E-mail : " . $email . "<br/>
 				<code>Message : " . $message . "</code><br/>
 				Cordialement <br/>
