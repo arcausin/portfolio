@@ -48,10 +48,10 @@ if (isset($_POST['submit'])) { // si le bouton Envoyer est appuyé
 				$corpsEmailFrom = "
 				<html>
 					<head>
-						<title>". $subjectTo ."</title>
+						<title>". $subjectFrom ."</title>
 					</head>
 					<body>
-						". $messageFrom ."
+						". $messageTo ."
 					</body>
 				</html>
 				";
