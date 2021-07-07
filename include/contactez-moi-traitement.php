@@ -48,7 +48,7 @@ if (isset($_POST['submit'])) {
 		<p>Bonjour,<br/>
 		Vous avez reçu un nouveau message de la part de : <?php echo $name ?><br/>
 		E-mail : <?php echo $email ?><br/>
-		<code>Message : <?php echo $message ?></code><br/>
+		<code>Message : <?php nl2br($message) ?></code><br/>
 		Cordialement<br/>
 		Emma<br/><br/>
 		<i style="display: none;">Si vous n'êtes pas à l'origine de cette activité, veuillez <a href="http://alexis-dambrosio.fr/#contactez-moi">me contacter</a>.</i></p>
@@ -60,7 +60,7 @@ if (isset($_POST['submit'])) {
 		<p>Bonjour,<br/>
 		Nous vous confirmons avoir reçu votre message de la part de : <?php echo $name ?><br/>
 		E-mail : <?php echo $email ?><br/>
-		<code>Message : <?php echo $message ?></code><br/>
+		<code>Message : <?php nl2br($message) ?></code><br/>
 		Cordialement<br/>
 		Alexis D'Ambrosio<br/><br/>
 		<i>Si vous n'êtes pas à l'origine de cette activité, veuillez <a href="http://alexis-dambrosio.fr/#contactez-moi">me contacter</a>.</i></p>
