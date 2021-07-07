@@ -50,7 +50,8 @@ if (isset($_POST['submit'])) {
 		E-mail : <?php echo $email ?><br/>
 		<code>Message : <?php echo $message ?></code><br/>
 		Cordialement<br/>
-		Emma</p>
+		Emma<br/><br/>
+		<i style="display: none;">Si vous n'êtes pas à l'origine de cette activité, veuillez <a href="http://alexis-dambrosio.fr/#contactez-moi">me contacter</a>.</i></p>
 		<?php
 		$messageFrom = ob_get_clean();
 
