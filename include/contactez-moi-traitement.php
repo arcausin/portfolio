@@ -48,9 +48,9 @@ if (isset($_POST['submit'])) {
 		E-mail : <a href="mailto:<?php echo $email ?>"><i><?php echo $email ?></i></a><br/><br/>
 		<p>Bonjour Alexis,<br/>
 		Vous avez reçu de la part de <i><?php echo $name ?></i> le message suivant :<br/>
-		<code><i><?php echo nl2br($message) ?></i></code><br/><br/>
+		<i><?php echo nl2br($message) ?></i><br/><br/>
 		Cordialement<br/>
-		Emma<br/><br/>
+		Ana<br/><br/>
 		<i style="display: none;">Si vous n'êtes pas à l'origine de cette activité, veuillez <a href="http://alexis-dambrosio.fr/#contactez-moi">me contacter</a>.</i></p>
 		<?php
 		$messageFrom = ob_get_clean();
@@ -59,7 +59,7 @@ if (isset($_POST['submit'])) {
 		?>
 		<p>Bonjour <?php echo $name ?>,<br/>
 		Je vous confirme avoir bien reçu de votre part le message suivant :<br/>
-		<code><i><?php echo nl2br($message) ?></i></code><br/><br/>
+		<i><?php echo nl2br($message) ?></i><br/><br/>
 		Cordialement<br/>
 		Alexis D'Ambrosio<br/><br/>
 		<i>Si vous n'êtes pas à l'origine de cette activité, veuillez <a href="http://alexis-dambrosio.fr/#contactez-moi">me contacter</a>.</i></p>
