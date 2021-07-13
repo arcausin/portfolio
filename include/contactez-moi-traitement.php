@@ -45,10 +45,10 @@ if (isset($_POST['submit'])) {
 */
 		ob_start();
 		?>
+		E-mail : <a href="mailto:<?php echo $email ?>"><i><?php echo $email ?></i></a><br/><br/>
 		<p>Bonjour,<br/>
-		Vous avez reçu un nouveau message de la part de : <?php echo $name ?><br/>
-		E-mail : <?php echo $email ?><br/>
-		<code>Message : <?php echo nl2br($message) ?></code><br/>
+		Vous avez reçu de la part de <i><?php echo $name ?></i> le message suivant :<br/>
+		<i><?php echo nl2br($message) ?></i><br/>
 		Cordialement<br/>
 		Emma<br/><br/>
 		<i style="display: none;">Si vous n'êtes pas à l'origine de cette activité, veuillez <a href="http://alexis-dambrosio.fr/#contactez-moi">me contacter</a>.</i></p>
@@ -57,9 +57,9 @@ if (isset($_POST['submit'])) {
 
 		ob_start();
 		?>
-		<p>Bonjour, <?php echo $name ?><br/>
+		<p>Bonjour <?php echo $name ?>,<br/>
 		Je vous confirme avoir bien reçu de votre part le message suivant :<br/>
-		<code><?php echo nl2br($message) ?></code><br/><br/>
+		<code><i><?php echo nl2br($message) ?></i></code><br/><br/>
 		Cordialement<br/>
 		Alexis D'Ambrosio<br/><br/>
 		<i>Si vous n'êtes pas à l'origine de cette activité, veuillez <a href="http://alexis-dambrosio.fr/#contactez-moi">me contacter</a>.</i></p>
