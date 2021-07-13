@@ -57,10 +57,9 @@ if (isset($_POST['submit'])) {
 
 		ob_start();
 		?>
-		<p>Bonjour,<br/>
-		Nous vous confirmons avoir reçu votre message de la part de : <?php echo $name ?><br/>
-		E-mail : <?php echo $email ?><br/>
-		<code>Message : <?php echo nl2br($message) ?></code><br/>
+		<p>Bonjour, <?php echo $name ?><br/>
+		Je vous confirme avoir bien reçu de votre part le message suivant :<br/>
+		<code><?php echo nl2br($message) ?></code><br/><br/>
 		Cordialement<br/>
 		Alexis D'Ambrosio<br/><br/>
 		<i>Si vous n'êtes pas à l'origine de cette activité, veuillez <a href="http://alexis-dambrosio.fr/#contactez-moi">me contacter</a>.</i></p>
