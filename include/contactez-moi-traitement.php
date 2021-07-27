@@ -41,7 +41,7 @@ if (isset($_POST['submit'])) {
 		$headers = "MIME-Version: 1.0" . "\r\n";
 		$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
-		$subjectFrom = "Nouveau message de " . $prenom . $nom;
+		$subjectFrom = "Nouveau message de " . $prenom " " $nom;
 
 		$subjectTo = "Confirmation de reception - Alexis D'Ambrosio";
 
@@ -49,7 +49,7 @@ if (isset($_POST['submit'])) {
 		?>
 		E-mail : <a href="mailto:<?php echo $email ?>"><i><?php echo $email ?></i></a><br/><br/>
 		<p>Bonjour Alexis,<br/>
-		Vous avez reçu de la part de <i><?php echo $prenom . $nom ?></i> le message suivant :<br/>
+		Vous avez reçu de la part de <i><?php echo $prenom " " $nom ?></i> le message suivant :<br/>
 		<i><?php echo nl2br($message) ?></i><br/><br/>
 		Cordialement<br/>
 		Ana<br/><br/></p>
@@ -58,7 +58,7 @@ if (isset($_POST['submit'])) {
 
 		ob_start();
 		?>
-		<p>Bonjour <?php echo $prenom . $nom ?>,<br/>
+		<p>Bonjour <?php echo $prenom " " $nom ?>,<br/>
 		Je vous confirme avoir bien reçu de votre part le message suivant :<br/>
 		<i><?php echo nl2br($message) ?></i><br/><br/>
 		Cordialement<br/>
