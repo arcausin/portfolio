@@ -9,7 +9,11 @@ function validationDonnees($donnees) {
 }
 
 if (isset($_POST['submit'])) {
-	if (empty($_POST['name'])) {
+	if (empty($_POST['prenom'])) {
+		header('Location: ../?prenom#contactez-moi');
+		exit();
+	} // si le champ Prénom n'est pas rempli
+	elseif (empty($_POST['nom'])) {
 		header('Location: ../?nom#contactez-moi');
 		exit();
 	} // si le champ Nom n'est pas rempli
@@ -17,6 +21,10 @@ if (isset($_POST['submit'])) {
 		header('Location: ../?email#contactez-moi');
 		exit();
 	} // si le champ Email n'est pas rempli
+	elseif (empty($_POST['sujet'])) {
+		header('Location: ../?sujet#contactez-moi');
+		exit();
+	} // si le champ Sujet n'est pas rempli
 	elseif (empty($_POST['message'])) {
 		header('Location: ../?message#contactez-moi');
 		exit();
@@ -24,14 +32,16 @@ if (isset($_POST['submit'])) {
 	else {
 		// tout les champs sont correctement rempli
 		// on récupère et sécurise les informations envoyé par le formulaire de contact
-		$name = validationDonnees($_POST['name']);
+		$prenom = validationDonnees($_POST['prenom']);
+		$nom = validationDonnees($_POST['nom']);
 		$email = validationDonnees($_POST['email']);
+		$sujet = validationDonnees($_POST['sujet']);
 		$message = validationDonnees($_POST['message']);
 		// on prépare le mail
 		$headers = "MIME-Version: 1.0" . "\r\n";
 		$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
-		$subjectFrom = "Nouveau message de " . $name;
+		$subjectFrom = "Nouveau message de " . $prenom . $nom;
 
 		$subjectTo = "Confirmation de reception - Alexis D'Ambrosio";
 
@@ -39,7 +49,7 @@ if (isset($_POST['submit'])) {
 		?>
 		E-mail : <a href="mailto:<?php echo $email ?>"><i><?php echo $email ?></i></a><br/><br/>
 		<p>Bonjour Alexis,<br/>
-		Vous avez reçu de la part de <i><?php echo $name ?></i> le message suivant :<br/>
+		Vous avez reçu de la part de <i><?php echo $prenom . $nom ?></i> le message suivant :<br/>
 		<i><?php echo nl2br($message) ?></i><br/><br/>
 		Cordialement<br/>
 		Ana<br/><br/></p>
@@ -48,7 +58,7 @@ if (isset($_POST['submit'])) {
 
 		ob_start();
 		?>
-		<p>Bonjour <?php echo $name ?>,<br/>
+		<p>Bonjour <?php echo $prenom . $nom ?>,<br/>
 		Je vous confirme avoir bien reçu de votre part le message suivant :<br/>
 		<i><?php echo nl2br($message) ?></i><br/><br/>
 		Cordialement<br/>
@@ -88,10 +98,12 @@ if (isset($_POST['submit'])) {
 		// envoie du mail
 		if (mail("arcausin@gmail.com, adao.dambrosio@gmail.com", $subjectFrom, $corpsEmailFrom, $headers)) {
 		  if (mail($email, $subjectTo, $corpsEmailTo, $headers)) {
-				$envoie_mail_bdd = $conn_portfolio->prepare("INSERT INTO historique_email (nom, email, message, date_ajout) VALUES (:nom, :email, :message, NOW())");
+				$envoie_mail_bdd = $conn_portfolio->prepare("INSERT INTO historique_email (prenom, nom, email, sujet, message, date_ajout) VALUES (:prenom, :nom, :email, :sujet, :message, NOW())");
 				$envoie_mail_bdd->execute(array(
-					'nom' => $name,
+					'prenom' => $prenom,
+					'nom' => $nom,
 					'email' => $email,
+					'sujet' => $sujet,
 					'message' => $message
 				));
 		    header('Location: ../?envoyer#contactez-moi');

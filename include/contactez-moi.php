@@ -1,11 +1,19 @@
 <section id="contactez-moi">
   <?php
+  if (isset($_GET['prenom'])) { ?>
+    <div class="alert alert-danger" role="alert">Veuillez entrer votre Prénom.</div>
+  <?php }
+
   if (isset($_GET['nom'])) { ?>
     <div class="alert alert-danger" role="alert">Veuillez entrer votre Nom.</div>
   <?php }
 
   if (isset($_GET['email'])) { ?>
     <div class="alert alert-danger" role="alert">Veuillez entrer votre Email.</div>
+  <?php }
+
+  if (isset($_GET['email'])) { ?>
+    <div class="alert alert-danger" role="alert">Veuillez entrer votre Sujet.</div>
   <?php }
 
   if (isset($_GET['message'])) { ?>
@@ -25,9 +33,11 @@
     <div class="col-md-8 col-xs-12">
       <form method="post" action="<?php echo $repertoire_include ?>include/contactez-moi-traitement.php">
         <div class="row gtr-uniform gtr-50">
-          <div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Nom" required/></div>
-          <div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" required/></div>
-          <div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4" required></textarea></div>
+          <div class="col-6 col-12-xsmall"><input type="text" name="prenom" id="prenom" placeholder="Prénom" maxlength="100" required/></div>
+          <div class="col-6 col-12-xsmall"><input type="text" name="nom" id="nom" placeholder="Nom" maxlength="100" required/></div>
+          <div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" maxlength="100" required/></div>
+          <div class="col-6 col-12-xsmall"><input type="text" name="sujet" id="sujet" placeholder="Sujet" maxlength="100" required/></div>
+          <div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4" maxlength="2000" required></textarea></div>
         </div>
         <ul class="actions">
           <li class="mt-3"><input type="submit" value="Envoyer" name="submit"/></li>
