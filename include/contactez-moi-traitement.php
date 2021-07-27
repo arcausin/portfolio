@@ -34,15 +34,7 @@ if (isset($_POST['submit'])) {
 		$subjectFrom = "Nouveau message de " . $name;
 
 		$subjectTo = "Confirmation de reception - Alexis D'Ambrosio";
-/*
-		$messageFrom = "<p>Bonjour, <br/>
-		Vous avez recu un nouveau message de la part de : " . $name . "<br/>
-		E-mail : " . $email . "<br/>
-		<code>Message : " . $message . "</code><br/>
-		Cordialement <br/>
-		Emma <br/><br/>
-		<i style=\"display: none;\">Si vous n'êtes pas à l'origine de cette activité, veuillez <a href=\"http://alexis-dambrosio.fr/#contactez-moi\">me contacter</a>.</i></p>";
-*/
+
 		ob_start();
 		?>
 		E-mail : <a href="mailto:<?php echo $email ?>"><i><?php echo $email ?></i></a><br/><br/>
@@ -50,8 +42,7 @@ if (isset($_POST['submit'])) {
 		Vous avez reçu de la part de <i><?php echo $name ?></i> le message suivant :<br/>
 		<i><?php echo nl2br($message) ?></i><br/><br/>
 		Cordialement<br/>
-		Ana<br/><br/>
-		<i style="display: none;">Si vous n'êtes pas à l'origine de cette activité, veuillez <a href="http://alexis-dambrosio.fr/#contactez-moi">me contacter</a>.</i></p>
+		Ana<br/><br/></p>
 		<?php
 		$messageFrom = ob_get_clean();
 
