@@ -41,7 +41,7 @@ if (isset($_POST['submit'])) {
 		$headers = "MIME-Version: 1.0" . "\r\n";
 		$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
-		$subjectFrom = "Nouveau message de " . $prenom . " " . $nom;
+		$subjectFrom = "Nouveau message de " . $prenom . " " . $nom . " - " . $sujet;
 
 		$subjectTo = "Confirmation de reception - Alexis D'Ambrosio";
 
