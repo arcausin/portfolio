@@ -9,23 +9,23 @@ function validationDonnees($donnees) {
 }
 
 if (isset($_POST['submit'])) {
-	if (empty($_POST['prenom'])) {
+	if (empty(validationDonnees($_POST['prenom']))) {
 		header('Location: ../?prenom#contactez-moi');
 		exit();
 	} // si le champ Prénom n'est pas rempli
-	elseif (empty($_POST['nom'])) {
+	elseif (empty(validationDonnees($_POST['nom']))) {
 		header('Location: ../?nom#contactez-moi');
 		exit();
 	} // si le champ Nom n'est pas rempli
-	elseif (empty($_POST['email'])) {
+	elseif (empty(validationDonnees($_POST['email']))) {
 		header('Location: ../?email#contactez-moi');
 		exit();
 	} // si le champ Email n'est pas rempli
-	elseif (empty($_POST['sujet'])) {
+	elseif (empty(validationDonnees($_POST['sujet']))) {
 		header('Location: ../?sujet#contactez-moi');
 		exit();
 	} // si le champ Sujet n'est pas rempli
-	elseif (empty($_POST['message'])) {
+	elseif (empty(validationDonnees($_POST['message']))) {
 		header('Location: ../?message#contactez-moi');
 		exit();
 	} // si le champ Message n'est pas rempli
@@ -49,8 +49,9 @@ if (isset($_POST['submit'])) {
 		?>
 		E-mail : <a href="mailto:<?php echo $email ?>"><i><?php echo $email ?></i></a><br/><br/>
 		<p>Bonjour Alexis,<br/>
-		Vous avez reçu de la part de <i><?php echo $prenom . " " . $nom ?></i> le message suivant :<br/>
-		<i><?php echo nl2br($message) ?></i><br/><br/>
+		Vous avez reçu de la part de <i><?php echo $prenom . " " . $nom ?></i> le message suivant :<br/><br/>
+		<i><?php echo nl2br($message) ?></i><br/>
+		___________________________<br/><br/>
 		Cordialement<br/>
 		Ana<br/><br/></p>
 		<?php
@@ -59,8 +60,9 @@ if (isset($_POST['submit'])) {
 		ob_start();
 		?>
 		<p>Bonjour <?php echo $prenom . " " .$nom ?>,<br/>
-		Je vous confirme avoir bien reçu de votre part le message suivant :<br/>
-		<i><?php echo nl2br($message) ?></i><br/><br/>
+		Je vous confirme avoir bien reçu de votre part le message suivant :<br/><br/>
+		<i><?php echo nl2br($message) ?></i><br/>
+		___________________________<br/><br/>
 		Cordialement<br/>
 		Alexis D'Ambrosio<br/><br/>
 		<i>Si vous n'êtes pas à l'origine de cette activité, veuillez <a href="http://alexis-dambrosio.fr/#contactez-moi">me contacter</a>.</i></p>
