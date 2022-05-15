@@ -25,9 +25,9 @@ $repertoire_include = "";
 				<header class="major">
 					<h2>A propos de moi</h2>
 				</header>
-				<p>Né en 2001, je suis un grand passionné de jeu vidéo et d'astronomie depuis mon plus jeune âge. <br/>
+				<p>Né en 2001, je suis un grand passionné de jeu vidéo et de comics depuis mon plus jeune âge. <br/>
 					Je suis curieux et avide de connaissances. <br/>
-					Je souhaite m'orienter vers le développement web ou l'animation / modelisation 3D.</p>
+					Je souhaite m'orienter vers le développement web.</p>
 			</section>
 
 			</section>
