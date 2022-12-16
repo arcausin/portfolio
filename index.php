@@ -22,12 +22,6 @@ $repertoire_include = "";
 					<li><a href="portfolio/" class="button">Portfolio</a></li>
 					<li><a href="#contactez-moi" class="button">Contactez-moi</a></li>
 				</ul>
-				<header class="major">
-					<h2>A propos de moi</h2>
-				</header>
-				<p>Suite à la validation d'un DUT MMI et le suivi d'une troisième année dans un Bachelor développement web en alternance.<br/>
-				Je suis à la recherche d'un emploi en tant que développeur web Junior.<br/>
-				Permis B + Véhicule segment B (Crit'Air 1)</p>
 			</section>
 
 			</section>
