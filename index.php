@@ -24,8 +24,6 @@ $repertoire_include = "";
 				</ul>
 			</section>
 
-			</section>
-
 			<section id="two">
 				<h2>Travaux récents</h2>
 				<div class="row">
