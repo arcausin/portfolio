@@ -20,12 +20,6 @@ $repertoire_include = "../";
 				<ul class="actions">
 					<li><a href="../" class="button">Retour</a></li>
 				</ul>
-				<header class="major">
-					<h2>A propos de moi</h2>
-				</header>
-				<p>Né en 2001, je suis un grand passionné de jeu vidéo et d'astronomie depuis mon plus jeune âge. <br/>
-					Je suis curieux et avide de connaissances. <br/>
-					Je souhaite m'orienter vers le développement web ou l'animation / modelisation 3D.</p>
 			</section>
 
 			<section id="two">
@@ -77,16 +71,18 @@ $repertoire_include = "../";
 				<hr style="width: 40%;">
 				<h4>Langages de programmation et Outils</h4>
 
-				<p>HTML, CSS, Bootstrap, Javascript, Jquery, PHP, SQL.</p>
-				<p>Adobe Photoshop, Illustrator, Premiere Pro, After Effect.</p>
-				<p>Blender, Davinci Resolve, Unreal Engine, Krita, Inkscape.</p>
+				<p>HTML, CSS, Bootstrap, Javascript, PHP, SQL.</p>
+				<p>Suite Affinity, Blender, Davinci Resolve, Unreal Engine, Krita.</p>
 
 				<hr style="width: 40%;">
 				<h4>Savoir-Faire</h4>
 
-				<p>- Intégration d'une maquette graphique d'un site web <br/>
-				- Exploiter les outils numérique dans le contexte professionnel <br/>
-				- Programmer dans un langage informatique spécifique</p>
+				<p>- Intégration de maquettes graphiques web<br/>
+				- Concevoir une base de données<br/>
+				- Créer une interface web de gestion de données<br/>
+				- Création d'outils applicatifs web (messagerie, forum,
+				système de compte utilisateurs, envoi de mails)<br/>
+				- Analyser et auditer le référencement naturel d'un site web</p>
 				<ul class="actions">
 					<li><a href="#" class="button">Retourner en haut</a></li>
 				</ul>

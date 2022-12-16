@@ -25,9 +25,9 @@ $repertoire_include = "";
 				<header class="major">
 					<h2>A propos de moi</h2>
 				</header>
-				<p>Né en 2001, je suis un grand passionné de jeu vidéo et de comics depuis mon plus jeune âge. <br/>
-					Je suis curieux et avide de connaissances. <br/>
-					Je souhaite m'orienter vers le développement web.</p>
+				<p>Suite à la validation d'un DUT MMI et le suivi d'une troisième année dans un Bachelor développement web en alternance.<br/>
+				Je suis à la recherche d'un emploi en tant que développeur web Junior.<br/>
+				Permis B + Véhicule segment B (Crit'Air 1)</p>
 			</section>
 
 			</section>
