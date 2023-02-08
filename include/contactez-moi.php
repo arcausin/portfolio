@@ -47,16 +47,6 @@
     <div class="col-md-4 col-xs-12">
       <ul class="labeled-icons">
         <li>
-          <h3 class="icon solid fa-home"><span class="label">Address</span></h3>
-          3 Rue Monsieur le Prince<br />
-          95270 Luzarches<br />
-          France
-        </li>
-        <li>
-          <h3 class="icon solid fa-mobile-alt"><span class="label">Phone</span></h3>
-          07.81.28.52.37
-        </li>
-        <li>
           <h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
           <a href="mailto:adao.dambrosio@gmail.com">adao.dambrosio@gmail.com</a>
         </li>
