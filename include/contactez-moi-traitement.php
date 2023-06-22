@@ -29,6 +29,10 @@ if (isset($_POST['submit'])) {
 		header('Location: ../?message#contactez-moi');
 		exit();
 	} // si le champ Message n'est pas rempli
+	elseif ($_POST['questionContact'] != 2) {
+		header('Location: ../?question#contactez-moi');
+		exit();
+	} // si la réponse à la question de sécurité est incorrecte
 	else {
 		// tout les champs sont correctement rempli
 		// on récupère et sécurise les informations envoyé par le formulaire de contact

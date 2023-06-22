@@ -1,33 +1,36 @@
 <section id="contactez-moi">
-  <?php
-  if (isset($_GET['prenom'])) { ?>
+  <?php if (isset($_GET['prenom'])) { ?>
     <div class="alert alert-danger" role="alert">Veuillez entrer votre Prénom.</div>
-  <?php }
+  <?php } ?>
 
-  if (isset($_GET['nom'])) { ?>
+  <?php if (isset($_GET['nom'])) { ?>
     <div class="alert alert-danger" role="alert">Veuillez entrer votre Nom.</div>
-  <?php }
+  <?php } ?>
 
-  if (isset($_GET['email'])) { ?>
+  <?php if (isset($_GET['email'])) { ?>
     <div class="alert alert-danger" role="alert">Veuillez entrer votre Email.</div>
-  <?php }
+  <?php } ?>
 
-  if (isset($_GET['email'])) { ?>
+  <?php if (isset($_GET['email'])) { ?>
     <div class="alert alert-danger" role="alert">Veuillez entrer votre Sujet.</div>
-  <?php }
+  <?php } ?>
 
-  if (isset($_GET['message'])) { ?>
+  <?php if (isset($_GET['message'])) { ?>
     <div class="alert alert-danger" role="alert">Veuillez entrer votre Message.</div>
-  <?php }
+  <?php } ?>
 
-  if (isset($_GET['renvoyer'])) { ?>
+  <?php if (isset($_GET['renvoyer'])) { ?>
     <div class="alert alert-danger" role="alert">Votre message n'a pas été envoyé.</div>
-  <?php }
+  <?php } ?>
 
-  if (isset($_GET['envoyer'])) { ?>
+  <?php if (isset($_GET['envoyer'])) { ?>
     <div class="alert alert-success" role="alert">Votre message a été envoyé.</div>
-  <?php }
-  ?>
+  <?php } ?>
+
+  <?php if (isset($_GET['question'])) { ?>
+    <div class="alert alert-danger" role="alert">La réponse à la question de sécurité est incorrecte</div>
+  <?php } ?>
+
   <h2>Contactez-moi</h2>
   <div class="row">
     <div class="col-md-8 col-xs-12">
@@ -38,6 +41,15 @@
           <div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" maxlength="100" required/></div>
           <div class="col-6 col-12-xsmall"><input type="text" name="sujet" id="sujet" placeholder="Sujet" maxlength="100" required/></div>
           <div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4" maxlength="2000" required></textarea></div>
+          <div class="col-12">
+            <label for="questionContact">Qui a formulé les trois lois de la robotique ?</label>
+              <select id="questionContact" name="questionContact" required>
+                  <option selected value="0">Sélectionner une réponse</option>
+                  <option value="1">James Cameron</option>
+                  <option value="2">Isaac Asimov</option>
+                  <option value="3">Hideo Kojima</option>
+              </select>
+          </div>
         </div>
         <ul class="actions">
           <li class="mt-3"><input type="submit" value="Envoyer" name="submit"/></li>
